@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "app_crosschange_bot"
+version = "0.1.0"
+description = ""
+authors = ["Maksim Ermakov <maksim_ermakov@protonmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyTelegramBotAPI-markups = "^0.0.4"
+pydantic = {extras = ["dotenv"], version = "^1.9.0"}
+regex = "^2022.4.24"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
