@@ -22,17 +22,10 @@ def send_welcome(message):
     bot.reply_to(message, "I will help :). Enter a ticker for your local currency:")
 
 
-# @bot.message_handler(commands=['enter'])
-# def enter(message):
-#     user = memory.get(message.from_user.id)
-#     if not user:
-#         logger.warning(f"No user with id {message.from_user} in memory")
-#         bot.reply_to(message, "Sowwy, a vewy bad ewwor occuwed, pwease restawt the bot completely <3")
-#         return
+@bot.message_handler(commands=['help'])
+def enter(message):
+    bot.reply_to(message, "This bot is dumb. You can only operate with two foreign currencies. To change the currencies restart your session with /start. You can update already stored rates via reentering them.")
 
-#     if user.stage != Stage.GET_NEW_TICKER:
-#         user.stage = Stage.GET_NEW_TICKER
-#         bot.reply_to(message, "Ok, whatever, enter a ticker")
 
 
 @bot.message_handler(commands=['me'])
@@ -68,7 +61,7 @@ To get 1 {cur0} you need {(1/cur2.buy):.2f} {cur2.ticker}
 For 1 {cur2.ticker} you can get {cur2.sell} {cur0}
 
 {cur1.ticker} <-> {cur2.ticker}
-For 1 {cur1.ticker} you can buy {(cur1.sell/cur2.sell):2f} {cur2.ticker}
+For 1 {cur1.ticker} you can buy {(cur1.sell/cur2.sell):.2f} {cur2.ticker}
 To get 1 {cur1.ticker} you need {(cur1.buy/cur2.buy):.2f} {cur2.ticker}  
 For 1 {cur2.ticker} you can buy {(cur2.sell/cur1.sell):.2f} {cur1.ticker}
 To get 1 {cur2.ticker} you need {(cur2.buy/cur1.buy):.2f} {cur1.ticker}
