@@ -51,20 +51,22 @@ def exchange(message):
         cur1, cur2, *_ = list(user.currencies.values())
         response = f"""
 {cur1.ticker} <-> {cur0}
-For 1 {cur0} you can buy {(1/cur1.sell):.2f} {cur1.ticker}
-To get 1 {cur0} you need {(1/cur1.buy):.2f} {cur1.ticker}
-For 1 {cur1.ticker} you can get {cur1.sell} {cur0}
+For    1 {cur0} you can buy {(1/cur1.sell):.4f} {cur1.ticker}
+To get 1 {cur0} you need {(1/cur1.buy):.4f} {cur1.ticker}
+For    1 {cur1.ticker} you can get {cur1.sell} {cur0}
+To get 1 {cur1.ticker} you need {cur1.buy} {cur0} 
 
 {cur2.ticker} <-> {cur0}
-For 1 {cur0} you can buy {(1/cur2.sell):.2f} {cur2.ticker}
-To get 1 {cur0} you need {(1/cur2.buy):.2f} {cur2.ticker}
-For 1 {cur2.ticker} you can get {cur2.sell} {cur0}
+For    1 {cur0} you can buy {(1/cur2.sell):.4f} {cur2.ticker}
+To get 1 {cur0} you need {(1/cur2.buy):.4f} {cur2.ticker}
+For    1 {cur2.ticker} you can get {cur2.sell} {cur0}
+To get 1 {cur2.ticker} you need {cur2.buy} {cur0} 
 
 {cur1.ticker} <-> {cur2.ticker}
-For 1 {cur1.ticker} you can buy {(cur1.sell/cur2.sell):.2f} {cur2.ticker}
-To get 1 {cur1.ticker} you need {(cur1.buy/cur2.buy):.2f} {cur2.ticker}  
-For 1 {cur2.ticker} you can buy {(cur2.sell/cur1.sell):.2f} {cur1.ticker}
-To get 1 {cur2.ticker} you need {(cur2.buy/cur1.buy):.2f} {cur1.ticker}
+For    1 {cur1.ticker} you can buy {(cur1.sell/cur2.sell):.4f} {cur2.ticker}
+To get 1 {cur1.ticker} you need {(cur1.buy/cur2.buy):.4f} {cur2.ticker}  
+For    1 {cur2.ticker} you can buy {(cur2.sell/cur1.sell):.4f} {cur1.ticker}
+To get 1 {cur2.ticker} you need {(cur2.buy/cur1.buy):.4f} {cur1.ticker}
         """
         bot.reply_to(message, response)
 
