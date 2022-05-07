@@ -1,0 +1,8 @@
+version: "3.8"
+
+services: 
+    crosschange_bot:
+        build: .
+        restart: on-failure:5
+
+
