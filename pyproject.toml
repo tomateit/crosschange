@@ -5,10 +5,11 @@ description = ""
 authors = ["Maksim Ermakov <maksim_ermakov@protonmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 pyTelegramBotAPI-markups = "^0.0.4"
 pydantic = {extras = ["dotenv"], version = "^1.9.0"}
 regex = "^2022.4.24"
+pytelegrambotapi = "^4.7.0"
 
 [tool.poetry.dev-dependencies]
 
